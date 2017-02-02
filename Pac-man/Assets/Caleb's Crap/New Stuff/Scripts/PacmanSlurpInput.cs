@@ -14,7 +14,7 @@ public class PacmanSlurpInput : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown(KeyCode.P))
+		if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             topLip.GetComponent<Animator>().SetTrigger("TriggerSlurp");
             bottomLip.GetComponent<Animator>().SetTrigger("TriggerSlurp");
