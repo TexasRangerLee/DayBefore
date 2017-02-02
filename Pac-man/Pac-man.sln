@@ -1,11 +1,11 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{97A8C9DA-5EF1-D3E0-F1E3-E84F570F3705}") = "Pac-man", "Assembly-CSharp-firstpass.csproj", "{1A7D166D-8C5A-EC86-7270-B1F272815FA2}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pac-man", "Assembly-CSharp-firstpass.csproj", "{1A7D166D-8C5A-EC86-7270-B1F272815FA2}"
 EndProject
-Project("{97A8C9DA-5EF1-D3E0-F1E3-E84F570F3705}") = "Pac-man", "Assembly-CSharp.csproj", "{16E7E552-D08B-9AFB-7A07-82F62E8D17B5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pac-man", "Assembly-CSharp.csproj", "{16E7E552-D08B-9AFB-7A07-82F62E8D17B5}"
 EndProject
-Project("{97A8C9DA-5EF1-D3E0-F1E3-E84F570F3705}") = "Pac-man", "Assembly-CSharp-Editor.csproj", "{F7AC6881-338E-6DBE-6D3D-8ACC21389592}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pac-man", "Assembly-CSharp-Editor.csproj", "{F7AC6881-338E-6DBE-6D3D-8ACC21389592}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
