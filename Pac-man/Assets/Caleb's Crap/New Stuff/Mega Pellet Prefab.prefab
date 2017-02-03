@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 23228596912070508}
   - component: {fileID: 122750678756310930}
   - component: {fileID: 95606297287821554}
+  - component: {fileID: 114463155429276302}
+  - component: {fileID: 54081427464945164}
   m_Layer: 10
   m_Name: Mega Pellet Prefab
   m_TagString: MegaPellet
@@ -38,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737424761417434}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 118.60283, y: 90.38, z: -79.63199}
+  m_LocalPosition: {x: 51.402832, y: 8.76, z: 21.368011}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,6 +84,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1737424761417434}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54081427464945164
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737424761417434}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!95 &95606297287821554
 Animator:
   serializedVersion: 3
@@ -99,6 +116,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114463155429276302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1737424761417434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc1373ed8d427a46a2fee7c108b0325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!122 &122750678756310930
 Halo:
   m_ObjectHideFlags: 1

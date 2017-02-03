@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Fire
+  - AntiPellet
+  - Pellet
+  - MegaPellet
+  - Ghost
+  - Chomp
+  - Pellet Manager
   layers:
   - Default
   - TransparentFX
