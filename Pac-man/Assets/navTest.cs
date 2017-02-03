@@ -23,6 +23,15 @@ public class navTest : MonoBehaviour {
         }
 	}
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Chomp")
+        {
+            Destroy(this.gameObject);
+            Debug.Log("From the Ghost: Pac-Man has chomped me");
+        }
+    }
+
    /* void getNextTarget()
     {
         Debug.Log("In next path");
