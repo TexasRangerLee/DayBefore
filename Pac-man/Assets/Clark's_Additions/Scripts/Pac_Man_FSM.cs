@@ -80,6 +80,7 @@ public class Pac_Man_FSM : MonoBehaviour
         if (other.tag == "AntiPellet")
         {
             Destroy(other.gameObject);
+            currentHealth -= 5;
             energy -= 15;
             adjustSpeed(energy);
             Debug.Log("Pac-Man would loose health here!");

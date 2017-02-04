@@ -5,56 +5,88 @@ using UnityEngine.UI;
 
 public class EnergyFiller : MonoBehaviour
 {
+    //set up energy wheel references, mostly handled via unity inspector
+    public GameObject eObj;
+    public Image eImage;
 
-    public GameObject obj;
-    public Image image;
+    //set up health wheel references, mostly handled via unity inspector
+    public GameObject hObj;
+    public Image hImage;
 
-    // Use this for initialization
+    //set up health/energy value references
+    public GameObject pacman;
+    public float energy;
+    public float health;
+
+    //make reference to pacman's fsm
+    public Pac_Man_FSM script;
+
+    //set up megachomp counter
+    [SerializeField]
+    private Text megaChompCounter;
+
     void Start()
     {
-    }
-    // Update is called once per frame
-    void Update()
-    {
+        //initialize starting health/energy
+        script = pacman.GetComponent<Pac_Man_FSM>();
     }
 
-    void EnergySet(float value)
+    void Update()
     {
-        //if value is sent in out of 100, convert it to decimal
-        //otherwise, it's sent in as either 0 (empty), 1 (full), or
-        //a decimal that's already out of 100, so there's no need to change it
-        if (value > 1)
-        {
-            value /= 100;
-        }
-        image.fillAmount = value;
+        //change energy
+        energy = script.energy;
+        EnergyChange(energy);
+
+        //change health
+        health = script.currentHealth;
+        HealthChange(health);
+
+        ChompCounterChange(energy);
     }
 
     void EnergyChange(float value)
     {
-        //same as above, but if a negative value is sent (meaning health loss)
-        //that is also accounted for
-        if (value > 1 || value < -1)
+        //if energy>megachomp value, set to max
+        //else if energy<0, set to min
+        //else energy/100 to get true float value for use with image fill; fill wheel appropriately
+        if (value >= 100)
+        {
+            value = 1;
+        }
+        else if (value <= 0)
+        {
+            value = 0;
+        }
+        else
         {
             value /= 100;
         }
-
-        //if fillamount would be set below minimum 0, set to minimum 0
-        if (image.fillAmount - value < 0)
-        {
-            image.fillAmount = 0;
-        }
-        //otherwise, if it would be set above maximum 1, set to maximum 1
-        else if (image.fillAmount + value > 1)
-        {
-            image.fillAmount = 1;
-        }
-        //otherwise, it is set somewhere between 0 & 1, so just set it normally
-        else
-        {
-            image.fillAmount += value;
-        }
+        eImage.fillAmount = value;
     }
 
+    void HealthChange(float value)
+    {
+        //see energy, may need change
+        if (value >= 100)
+        {
+            value = 1;
+        }
+        else if (value <= 0)
+        {
+            value = 0;
+        }
+        else
+        {
+            value /= 100;
+        }
+        hImage.fillAmount = value;
+    }
 
+    void ChompCounterChange(float energy)
+    {
+        //convert energy to an int because that's easier
+        int energy2 = (int)energy;
+        energy2 /= 100;
+        megaChompCounter.text = "x" + energy2;
+    }
 }
