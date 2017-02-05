@@ -81,6 +81,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Caleb&apos;s Crap\New Stuff\Scripts\EnergyFiller.cs" />
+    <Compile Include="Assets\Caleb&apos;s Crap\New Stuff\Scripts\MegaSlurpScript.cs" />
+    <Compile Include="Assets\Caleb&apos;s Crap\New Stuff\Scripts\PacmanSlurpInput.cs" />
+    <Compile Include="Assets\Caleb&apos;s Crap\Old Stuff\PacmanCollisionScript.cs" />
+    <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Camera_Follower.cs" />
+    <Compile Include="Assets\Clark&apos;s_Additions\Scripts\MegaPellet_Actions.cs" />
+    <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Pac_Man_FSM.cs" />
+    <Compile Include="Assets\HealthFiller.cs" />
     <Compile Include="Assets\NoiseBrush\NoiseBrush.cs" />
     <Compile Include="Assets\NoiseBrush\Scripts\Matrix.cs" />
     <Compile Include="Assets\NoiseBrush\Scripts\Noise.cs" />
@@ -96,6 +104,7 @@
     <Compile Include="Assets\cammove.cs" />
     <Compile Include="Assets\navTest.cs" />
     <Compile Include="Assets\player.cs" />
+    <Compile Include="Assets\specter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
