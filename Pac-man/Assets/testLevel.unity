@@ -719,6 +719,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1714395534}
   m_GameObject: {fileID: 171776675}
   m_Mesh: {fileID: 4300008, guid: d4114ea275729d64989bcd68ac35540f, type: 3}
+--- !u!1 &176850267 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1515593544528024, guid: ccb1b0f7555083049ac43572f13d9150,
+    type: 2}
+  m_PrefabInternal: {fileID: 2136856947}
 --- !u!1 &190080794
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,6 +2470,11 @@ Transform:
   m_Father: {fileID: 397543561}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &512501429 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1775700874746034, guid: ccb1b0f7555083049ac43572f13d9150,
+    type: 2}
+  m_PrefabInternal: {fileID: 2136856947}
 --- !u!1 &531486715
 GameObject:
   m_ObjectHideFlags: 0
@@ -10704,6 +10714,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
+    - target: {fileID: 1863259898258394, guid: 31391e3aed00e9847bc8c7867c16dade, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31391e3aed00e9847bc8c7867c16dade, type: 2}
   m_IsPrefabParent: 0
@@ -11501,6 +11515,32 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 349127277f3a4c243908ef0a941b9bc8, type: 2}
+    - target: {fileID: 114995592822207410, guid: ccb1b0f7555083049ac43572f13d9150,
+        type: 2}
+      propertyPath: topLip
+      value: 
+      objectReference: {fileID: 512501429}
+    - target: {fileID: 114995592822207410, guid: ccb1b0f7555083049ac43572f13d9150,
+        type: 2}
+      propertyPath: bottomLip
+      value: 
+      objectReference: {fileID: 176850267}
+    - target: {fileID: 1515593544528024, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775700874746034, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1645770872499232, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1694196693928088, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
+      propertyPath: m_TagString
+      value: PacMan
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
   m_IsPrefabParent: 0
