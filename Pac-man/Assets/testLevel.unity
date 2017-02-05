@@ -3436,6 +3436,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 537575094}
   m_GameObject: {fileID: 663339069}
   m_Mesh: {fileID: 4300014, guid: d4114ea275729d64989bcd68ac35540f, type: 3}
+--- !u!1 &669489480 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1811940599662608, guid: ccb1b0f7555083049ac43572f13d9150,
+    type: 2}
+  m_PrefabInternal: {fileID: 2136856947}
 --- !u!1 &673035326
 GameObject:
   m_ObjectHideFlags: 0
@@ -6954,6 +6959,7 @@ MonoBehaviour:
   energy: 0
   invulnerable: 0
   currentHealth: 0
+  pacBody: {fileID: 0}
 --- !u!143 &1398432573
 CharacterController:
   m_ObjectHideFlags: 0
@@ -10714,10 +10720,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 19
       objectReference: {fileID: 0}
-    - target: {fileID: 1863259898258394, guid: 31391e3aed00e9847bc8c7867c16dade, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31391e3aed00e9847bc8c7867c16dade, type: 2}
   m_IsPrefabParent: 0
@@ -11464,7 +11466,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4992983867952218, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 91.409996
+      value: 91.1
       objectReference: {fileID: 0}
     - target: {fileID: 4992983867952218, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
       propertyPath: m_LocalPosition.z
@@ -11541,6 +11543,25 @@ Prefab:
       propertyPath: m_TagString
       value: PacMan
       objectReference: {fileID: 0}
+    - target: {fileID: 114611737406459596, guid: ccb1b0f7555083049ac43572f13d9150,
+        type: 2}
+      propertyPath: yellow
+      value: 
+      objectReference: {fileID: 2100000, guid: f75ee7f6214919749bec16d60c17fef4, type: 2}
+    - target: {fileID: 114611737406459596, guid: ccb1b0f7555083049ac43572f13d9150,
+        type: 2}
+      propertyPath: red
+      value: 
+      objectReference: {fileID: 2100000, guid: 68c4ed7d71b0d8a40955299ac573a422, type: 2}
+    - target: {fileID: 1811940599662608, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
+      propertyPath: m_TagString
+      value: Body
+      objectReference: {fileID: 0}
+    - target: {fileID: 114611737406459596, guid: ccb1b0f7555083049ac43572f13d9150,
+        type: 2}
+      propertyPath: pacBody
+      value: 
+      objectReference: {fileID: 669489480}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccb1b0f7555083049ac43572f13d9150, type: 2}
   m_IsPrefabParent: 0
