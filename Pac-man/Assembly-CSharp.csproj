@@ -69,6 +69,7 @@
      <Compile Include="Assets\cammove.cs" />
      <Compile Include="Assets\navTest.cs" />
      <Compile Include="Assets\player.cs" />
+     <Compile Include="Assets\specter.cs" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
