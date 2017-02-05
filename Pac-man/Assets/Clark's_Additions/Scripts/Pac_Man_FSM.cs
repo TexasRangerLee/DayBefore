@@ -11,14 +11,21 @@ public class Pac_Man_FSM : MonoBehaviour
     public float jump;
     public float gravity;
 
+    [SerializeField]
+    private float baseHealth;
+    public float energy;
+
+    public bool invulnerable;
+
     Rigidbody rb;
 
-    [SerializeField]
-    private bool inAir = false;
+    public float currentHealth;
 
     CharacterController cc;
 
     private Vector3 moveDirection;
+
+    private float baseSpeed;
 
 
 	// Use this for initialization
@@ -28,6 +35,9 @@ public class Pac_Man_FSM : MonoBehaviour
         cc = GetComponent<CharacterController>();
         rb.freezeRotation = true;
         moveDirection = Vector3.zero;
+        currentHealth = baseHealth;
+        baseSpeed = speed;
+        adjustSpeed(energy);
 	}
 	
 	// Update is called once per frame
@@ -58,4 +68,36 @@ public class Pac_Man_FSM : MonoBehaviour
         }
 
 	}
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Ghost")
+        {
+            currentHealth = currentHealth / 3;
+            Debug.Log("Pac-Man will die here!");
+        }
+
+        if (other.tag == "AntiPellet")
+        {
+            Destroy(other.gameObject);
+            currentHealth -= 5;
+            energy -= 15;
+            adjustSpeed(energy);
+            Debug.Log("Pac-Man would loose health here!");
+        }
+
+        if (other.tag == "Pellet")
+        {
+            Destroy(other.gameObject);
+            energy = energy + 20;
+            adjustSpeed(energy);
+            Debug.Log("Pac-Man would gain energy here");
+        }
+
+    }
+
+    public void adjustSpeed(float currentEnergy)
+    {
+        speed = baseSpeed + (baseSpeed * (energy / 100));
+    }
 }
