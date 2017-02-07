@@ -11,6 +11,9 @@ TagManager:
   - Ghost
   - Chomp
   - Pellet Manager
+  - Energy
+  - PacMan
+  - Body
   layers:
   - Default
   - TransparentFX
