@@ -18,6 +18,7 @@ public class Pac_Man_FSM : MonoBehaviour
     public float currentHealth;
     public GameObject pacBody;
     public bool debugInfiniteEnergy;
+    public bool debugInfiniteHealth;
     public Vector3 pacMansLastLocation;
 
     Rigidbody rb;
@@ -48,6 +49,7 @@ public class Pac_Man_FSM : MonoBehaviour
         damaged = false;
         baseSize = transform.localScale;
         debugInfiniteEnergy = false;
+        debugInfiniteHealth = false;
 
         pacManCameraOffset = cameraScritpt.offset;
         pacManCameraBack = cameraScritpt.distanceAwayFrom;
@@ -145,6 +147,11 @@ public class Pac_Man_FSM : MonoBehaviour
                 adjustSpeed(energy);
             }
             energy = 900;
+        }
+
+        if (debugInfiniteHealth)
+        {
+            currentHealth = baseHealth;
         }
 	}
 
