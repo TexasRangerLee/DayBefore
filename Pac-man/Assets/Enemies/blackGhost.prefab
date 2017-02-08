@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4404775872558334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ghost Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   - component: {fileID: 4714874688713740}
   - component: {fileID: 33467083778204546}
   - component: {fileID: 23706361916688850}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ghost Bottom (Cylinder)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   - component: {fileID: 33119423229603248}
   - component: {fileID: 135751562376259294}
   - component: {fileID: 23283405085867336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Ghost Top (Sphere)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 195389666376114984}
   - component: {fileID: 114362596536672788}
   - component: {fileID: 114939385069373366}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: blackGhost
   m_TagString: Ghost
   m_Icon: {fileID: 0}
