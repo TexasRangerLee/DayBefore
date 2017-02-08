@@ -54,6 +54,7 @@
      <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Ghost_Attack.cs" />
      <Compile Include="Assets\Clark&apos;s_Additions\Scripts\MegaPellet_Actions.cs" />
      <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Pac_Man_FSM.cs" />
+     <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Water_Respawn.cs" />
      <Compile Include="Assets\HealthFiller.cs" />
      <Compile Include="Assets\Menu Scenes\ButtonActionScript.cs" />
      <Compile Include="Assets\Menu Scenes\MasterVolumeScript.cs" />
