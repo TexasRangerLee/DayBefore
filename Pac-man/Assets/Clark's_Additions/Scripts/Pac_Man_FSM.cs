@@ -17,6 +17,7 @@ public class Pac_Man_FSM : MonoBehaviour
     public bool invulnerable;
     public float currentHealth;
     public GameObject pacBody;
+    public bool debugInfiniteEnergy;
 
     Rigidbody rb;
     CharacterController cc;
@@ -24,19 +25,21 @@ public class Pac_Man_FSM : MonoBehaviour
     private float baseSpeed;
     private bool damaged;
     private Vector3 baseSize;
+    private float groundedBase;
 
 	// Use this for initialization
 	void Start () 
     {
 	    rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
-        rb.freezeRotation = true;
+        //rb.freezeRotation = true;
         moveDirection = Vector3.zero;
         currentHealth = baseHealth;
         baseSpeed = speed;
         adjustSpeed(energy);
         damaged = false;
         baseSize = transform.localScale;
+        debugInfiniteEnergy = false;
 	}
 	
 	// Update is called once per frame
@@ -45,13 +48,15 @@ public class Pac_Man_FSM : MonoBehaviour
         transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
         float vertical = Input.GetAxis("Vertical");
         CharacterController controller = GetComponent<CharacterController>();
+        Debug.Log(controller.isGrounded);
         if (controller.isGrounded)
         {
+            groundedBase = transform.position.y;
             //float vertical = Input.GetAxis("Vertical");
-            moveDirection = new Vector3(0, 0, vertical);
+            moveDirection = new Vector3(0, -0.2f, vertical);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection *= speed;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space))
             {
                 transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
                 moveDirection.y = jump;
@@ -59,26 +64,28 @@ public class Pac_Man_FSM : MonoBehaviour
         }
         else
         {
-            if (transform.position.y < jump)
+            if (Input.GetKey(KeyCode.Tab))
             {
+                transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
+                vertical = Input.GetAxis("Vertical");
+                moveDirection = new Vector3(0, 0, vertical);
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection.y -= gravity / 10 * Time.deltaTime;
+                moveDirection *= speed;
+            }
+            else if (transform.position.y < groundedBase + jump)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
+            else if (transform.position.y > groundedBase + jump)
+            {
+                transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
+                vertical = Input.GetAxis("Vertical");
+                moveDirection = new Vector3(0, 0, vertical);
+                moveDirection = transform.TransformDirection(moveDirection);
+                moveDirection *= speed;
+            }
 
-            }
-            else
-            {
-                if (Input.GetKey(KeyCode.F))
-                {
-                    transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
-                    vertical = Input.GetAxis("Vertical");
-                    moveDirection = new Vector3(0, 0, vertical);
-                    moveDirection = transform.TransformDirection(moveDirection);
-                    moveDirection.y -= gravity/10 * Time.deltaTime;
-                    moveDirection *= speed;
-                }
-                else
-                {
-                    moveDirection.y -= gravity * Time.deltaTime;
-                }
-            }
         }
 
         //moveDirection.y -= gravity * Time.deltaTime;
@@ -102,6 +109,15 @@ public class Pac_Man_FSM : MonoBehaviour
             StartCoroutine(iFrames());
         }
 
+        if (debugInfiniteEnergy)
+        {
+            if (energy > 100)
+            {
+                energy = 100;
+                adjustSpeed(energy);
+            }
+            energy = 900;
+        }
 	}
 
     void OnTriggerEnter(Collider other)
