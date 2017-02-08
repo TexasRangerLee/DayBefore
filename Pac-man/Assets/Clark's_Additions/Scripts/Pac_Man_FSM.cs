@@ -27,11 +27,18 @@ public class Pac_Man_FSM : MonoBehaviour
     private Vector3 baseSize;
     private float groundedBase;
 
+    Camera_Follower cameraScritpt;
+    float pacManCameraOffset;
+    float pacManCameraBack;
+    float pacManCameraUp;
+    float pacManCameraSmooth;
+
 	// Use this for initialization
 	void Start () 
     {
 	    rb = GetComponent<Rigidbody>();
         cc = GetComponent<CharacterController>();
+        cameraScritpt = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera_Follower>();
         //rb.freezeRotation = true;
         moveDirection = Vector3.zero;
         currentHealth = baseHealth;
@@ -40,6 +47,11 @@ public class Pac_Man_FSM : MonoBehaviour
         damaged = false;
         baseSize = transform.localScale;
         debugInfiniteEnergy = false;
+
+        pacManCameraOffset = cameraScritpt.offset;
+        pacManCameraBack = cameraScritpt.distanceAwayFrom;
+        pacManCameraUp = cameraScritpt.distanceUpFrom;
+        pacManCameraSmooth = cameraScritpt.smoothCamera;
 	}
 	
 	// Update is called once per frame
@@ -51,6 +63,7 @@ public class Pac_Man_FSM : MonoBehaviour
         Debug.Log(controller.isGrounded);
         if (controller.isGrounded)
         {
+            this.rotations = 2f;
             groundedBase = transform.position.y;
             //float vertical = Input.GetAxis("Vertical");
             moveDirection = new Vector3(0, -0.2f, vertical);
@@ -66,6 +79,7 @@ public class Pac_Man_FSM : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.Tab))
             {
+                this.rotations = 1f;
                 transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
                 vertical = Input.GetAxis("Vertical");
                 moveDirection = new Vector3(0, 0, vertical);
@@ -75,10 +89,12 @@ public class Pac_Man_FSM : MonoBehaviour
             }
             else if (transform.position.y < groundedBase + jump)
             {
+                this.rotations = 1;
                 moveDirection.y -= gravity * Time.deltaTime;
             }
             else if (transform.position.y > groundedBase + jump)
             {
+                this.rotations = 1;
                 transform.Rotate(0, Input.GetAxis("Horizontal") * rotations, 0);
                 vertical = Input.GetAxis("Vertical");
                 moveDirection = new Vector3(0, 0, vertical);
@@ -95,10 +111,20 @@ public class Pac_Man_FSM : MonoBehaviour
         {
             if (transform.localScale == baseSize)
             {
+                cameraScritpt.offset = 10;
+                cameraScritpt.distanceAwayFrom = 5;
+                cameraScritpt.distanceUpFrom = 0;
+                cameraScritpt.smoothCamera = 15;
+                this.speed = speed / 2;
                 transform.localScale = new Vector3(transform.localScale.x/2,transform.localScale.y/2,transform.localScale.z/2);
             }
             else
             {
+                cameraScritpt.offset = pacManCameraOffset;
+                cameraScritpt.distanceAwayFrom = pacManCameraBack;
+                cameraScritpt.distanceUpFrom = pacManCameraUp;
+                cameraScritpt.smoothCamera = pacManCameraSmooth;
+                this.speed = speed * 2;
                 transform.localScale = new Vector3(transform.localScale.x * 2, transform.localScale.y * 2, transform.localScale.z * 2);
             }
         }

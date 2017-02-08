@@ -7,7 +7,7 @@ public class Camera_Follower : MonoBehaviour
     GameObject PacMan;
 
     [SerializeField]
-    float offset;
+    public float offset;
 
     //Smooth following
     [SerializeField]
