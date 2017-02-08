@@ -86,7 +86,6 @@ GameObject:
   - component: {fileID: 20708722350339914}
   - component: {fileID: 124080331350496584}
   - component: {fileID: 92906978039680358}
-  - component: {fileID: 81260693952451192}
   m_Layer: 0
   m_Name: Minimap
   m_TagString: Untagged
@@ -751,8 +750,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1423100845699510}
-  m_LocalRotation: {x: 0, y: 0.2968093, z: 0, w: 0.9549368}
-  m_LocalPosition: {x: 1117, y: 23.71, z: 382}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 920.2, y: 39.5, z: 1299.9}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 4534171387182288}
@@ -763,7 +762,7 @@ Transform:
   - {fileID: 4112443486579336}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &4522501887937960
 Transform:
   m_ObjectHideFlags: 1
@@ -1909,13 +1908,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!81 &81260693952451192
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234091864898452}
-  m_Enabled: 1
 --- !u!92 &92906978039680358
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1968,8 +1960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a474b8a153c934fb7d29d238347209, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 35
-  rotations: 7.5
+  speed: 30
+  rotations: 2.5
   jump: 45
   gravity: 60
   baseHealth: 100
@@ -1978,6 +1970,7 @@ MonoBehaviour:
   currentHealth: 100
   pacBody: {fileID: 1760378685213842}
   debugInfiniteEnergy: 0
+  pacMansLastLocation: {x: 0, y: 0, z: 0}
 --- !u!114 &114286023102846134
 MonoBehaviour:
   m_ObjectHideFlags: 1
