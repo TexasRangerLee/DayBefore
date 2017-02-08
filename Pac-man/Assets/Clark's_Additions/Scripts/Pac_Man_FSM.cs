@@ -18,6 +18,7 @@ public class Pac_Man_FSM : MonoBehaviour
     public float currentHealth;
     public GameObject pacBody;
     public bool debugInfiniteEnergy;
+    public Vector3 pacMansLastLocation;
 
     Rigidbody rb;
     CharacterController cc;
@@ -64,6 +65,7 @@ public class Pac_Man_FSM : MonoBehaviour
         if (controller.isGrounded)
         {
             this.rotations = 2f;
+            pacMansLastLocation = transform.position;
             groundedBase = transform.position.y;
             //float vertical = Input.GetAxis("Vertical");
             moveDirection = new Vector3(0, -0.2f, vertical);
