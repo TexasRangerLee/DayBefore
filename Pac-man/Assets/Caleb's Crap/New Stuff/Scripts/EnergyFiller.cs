@@ -87,6 +87,10 @@ public class EnergyFiller : MonoBehaviour
         //convert energy to an int because that's easier
         int energy2 = (int)energy;
         energy2 /= 100;
+        if (energy2 > 9)
+        {
+            energy2 = 9;
+        }
         megaChompCounter.text = "x" + energy2;
     }
 }

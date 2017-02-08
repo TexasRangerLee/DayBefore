@@ -56,6 +56,9 @@
      <Compile Include="Assets\Clark&apos;s_Additions\Scripts\Pac_Man_FSM.cs" />
      <Compile Include="Assets\HealthFiller.cs" />
      <Compile Include="Assets\Menu Scenes\ButtonActionScript.cs" />
+     <Compile Include="Assets\Menu Scenes\MasterVolumeScript.cs" />
+     <Compile Include="Assets\Menu Scenes\SliderInitScript.cs" />
+     <Compile Include="Assets\Menu Scenes\ToggleActionScript.cs" />
      <Compile Include="Assets\NoiseBrush\NoiseBrush.cs" />
      <Compile Include="Assets\NoiseBrush\Scripts\Matrix.cs" />
      <Compile Include="Assets\NoiseBrush\Scripts\Noise.cs" />

@@ -25,6 +25,10 @@ public class Pac_Man_FSM : MonoBehaviour
     private bool damaged;
     private Vector3 baseSize;
 
+    //Addition by Caleb; if this screws up, blame me
+    public bool debugInfiniteEnergy;
+    //end Caleb Addition
+
 	// Use this for initialization
 	void Start () 
     {
@@ -37,6 +41,10 @@ public class Pac_Man_FSM : MonoBehaviour
         adjustSpeed(energy);
         damaged = false;
         baseSize = transform.localScale;
+
+        //Caleb addition
+        debugInfiniteEnergy = false;
+        //end addition
 	}
 	
 	// Update is called once per frame
@@ -102,7 +110,19 @@ public class Pac_Man_FSM : MonoBehaviour
             StartCoroutine(iFrames());
         }
 
-	}
+        //Caleb Addition
+        if (debugInfiniteEnergy)
+        {
+            if (energy < 100)
+            {
+                energy = 100;
+                adjustSpeed(energy);
+            }
+            energy = 900;
+        }
+        //end addition
+
+    }
 
     void OnTriggerEnter(Collider other)
     {
