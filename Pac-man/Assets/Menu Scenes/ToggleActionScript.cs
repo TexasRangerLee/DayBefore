@@ -25,4 +25,9 @@ public class ToggleActionScript : MonoBehaviour {
     {
         script.debugInfiniteEnergy = infinite;
     }
+
+    public void DebugHealth(bool infinite)
+    {
+        script.debugInfiniteHealth = infinite;
+    }
 }
